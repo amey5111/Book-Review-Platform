@@ -5,6 +5,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
 
+const authRoutes = require('./src/routes/authRoutes'); 
+const bookRoutes = require('./src/routes/bookRoutes');
+const reviewRoutes = require('./src/routes/reviewRoutes');
+
 const app = express();
 
 // Middlewares
@@ -15,7 +19,12 @@ app.use(morgan('dev'));
 // Simple health route
 app.get('/', (req, res) => res.json({ ok: true, message: 'Book Review API running' }));
 
-// MongoDB connection
+// Mount routes
+app.use('/api/auth', authRoutes); // Auth routes
+app.use('/api/books', bookRoutes); // Book routes
+app.use('/api', reviewRoutes); // Review routes
+
+// MongoDB connection + server start
 const start = async () => {
   try {
     const uri = process.env.MONGO_URI;
