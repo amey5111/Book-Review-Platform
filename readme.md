@@ -1,5 +1,13 @@
 ## Bookish -- A Comprehensive Book Review Platform
 
+#### 🌐 Live Demo:
+
+[🚀 **Frontend Website**](https://bookish-a-comprehensive-book-review-platform.vercel.app/)  
+[🛠️ **Backend API** ](book-review-platform-production-be7d.up.railway.app)
+
+
+
+
 ### Project Overview
 
 A full-stack Book Review application with:
